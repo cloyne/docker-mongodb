@@ -9,4 +9,5 @@ fi
 
 [ -f /etc/service/mongod/run.initialization ] && source /etc/service/mongod/run.initialization
 
-exec chpst -u mongodb:mongodb /usr/bin/mongod --config /var/lib/mongodb/mongodb.conf 2>&1
+exec chpst -u mongodb:mongodb /usr/bin/mongod --config /var/lib/mongodb/mongodb.conf --replSet rs01 2>&1
+

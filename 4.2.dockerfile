@@ -9,6 +9,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv E162F504A20CDF1
  echo "deb http://repo.mongodb.org/apt/ubuntu $(cat /etc/lsb-release | grep DISTRIB_CODENAME | cut -d= -f2)/mongodb-org/4.2 multiverse" > /etc/apt/sources.list.d/mongodb.list && \
  apt-get update -q -q && \
  apt-get install --yes --force-yes mongodb-org && \
- apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm
+ apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache ~/.npm \
+ mkdir /etc/service
 
 COPY ./etc /etc
